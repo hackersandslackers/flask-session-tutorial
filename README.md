@@ -14,7 +14,7 @@
 [![GitHub Stars](https://img.shields.io/github/stars/hackersandslackers/flasksession-tutorial.svg?style=flat-square8&colorA=4c566a&logo=GitHub&colorB=ebcb8b)](https://github.com/hackersandslackers/flasksession-tutorial/stargazers)
 [![GitHub Forks](https://img.shields.io/github/forks/hackersandslackers/flasksession-tutorial.svg?style=flat-square&colorA=4c566a&logo=GitHub&colorB=ebcb8b)](https://github.com/hackersandslackers/flasksession-tutorial/network)
 
-![Flask Session Redis Tutorial](https://hackersandslackers.com/content/images/2019/05/flask-session.jpg)
+![Flask Session Redis Tutorial](https://res-5.cloudinary.com/hackers/image/upload/q_auto:best/v1/2019/12/flask-session2.jpg)
 
 Source code for the accompanying tutorial found here: https://hackersandslackers.com/managing-user-session-variables-with-flask-sessions-and-redis/
 
