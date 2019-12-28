@@ -19,13 +19,11 @@ setup(
     author='Todd Birchard',
     author_email='toddbirchard@gmail.com',
     classifiers=[
-        'Development Status :: 3 - Alpha',
-        'Intended Audience :: Developers',
         'Programming Language :: Python :: 3',
         'Programming Language :: Python :: 3.7',
     ],
     keywords='Flask Flask-Session Redis Session Tutorial',
-    packages=find_packages(),  # Required
+    packages=find_packages(),
     install_requires=['flask',
                       'flask_login',
                       'flask_sqlalchemy',
