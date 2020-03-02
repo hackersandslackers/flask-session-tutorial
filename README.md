@@ -10,9 +10,9 @@
 ![Psycopg2-Binary](https://img.shields.io/badge/Psycopg2--Binary-v2.7.7-red.svg?longCache=true&style=flat-square&logo=scala&logoColor=white&colorA=4c566a&colorB=bf616a)
 ![Redis](https://img.shields.io/badge/Redis-v3.2.1-red.svg?longCache=true&style=flat-square&logo=redis&logoColor=white&colorA=4c566a&colorB=bf616a)
 ![GitHub Last Commit](https://img.shields.io/github/last-commit/google/skia.svg?style=flat-square&colorA=4c566a&colorB=a3be8c&logo=GitHub)
-[![GitHub Issues](https://img.shields.io/github/issues/hackersandslackers/flasksession-tutorial.svg?style=flat-square&colorA=4c566a&logo=GitHub&colorB=ebcb8b)](https://github.com/hackersandslackers/flasksession-tutorial/issues)
-[![GitHub Stars](https://img.shields.io/github/stars/hackersandslackers/flasksession-tutorial.svg?style=flat-square8&colorA=4c566a&logo=GitHub&colorB=ebcb8b)](https://github.com/hackersandslackers/flasksession-tutorial/stargazers)
-[![GitHub Forks](https://img.shields.io/github/forks/hackersandslackers/flasksession-tutorial.svg?style=flat-square&colorA=4c566a&logo=GitHub&colorB=ebcb8b)](https://github.com/hackersandslackers/flasksession-tutorial/network)
+[![GitHub Issues](https://img.shields.io/github/issues/hackersandslackers/flask-session-tutorial.svg?style=flat-square&colorA=4c566a&logo=GitHub&colorB=ebcb8b)](https://github.com/hackersandslackers/flask-session-tutorial/issues)
+[![GitHub Stars](https://img.shields.io/github/stars/hackersandslackers/flask-session-tutorial.svg?style=flat-square8&colorA=4c566a&logo=GitHub&colorB=ebcb8b)](https://github.com/hackersandslackers/flask-session-tutorial/stargazers)
+[![GitHub Forks](https://img.shields.io/github/forks/hackersandslackers/flask-session-tutorial.svg?style=flat-square&colorA=4c566a&logo=GitHub&colorB=ebcb8b)](https://github.com/hackersandslackers/flask-session-tutorial/network)
 
 ![Flask Session Redis Tutorial](https://res-5.cloudinary.com/hackers/image/upload/q_auto:best/v1/2019/12/flask-session2.jpg)
 
@@ -23,8 +23,8 @@ Source code for the accompanying tutorial found here: https://hackersandslackers
 Installation is recommended with Pipenv:
 
 ```shell
-$ git clone https://github.com/hackersandslackers/flasksession-tutorial.git
-$ cd flasksession-tutorial
+$ git clone https://github.com/hackersandslackers/flask-session-tutorial.git
+$ cd flask-session-tutorial
 $ pipenv shell
 $ pipenv update
 $ python3 main.py
@@ -33,8 +33,8 @@ $ python3 main.py
 Alternatively, try installing via `setup.py`:
 
 ```shell
-$ git clone https://github.com/hackersandslackers/flasksession-tutorial.git
-$ cd flasksession-tutorial
+$ git clone https://github.com/hackersandslackers/flask-session-tutorial.git
+$ cd flask-session-tutorial
 $ python3 setup.py install
 $ python3 main.py
 ```
