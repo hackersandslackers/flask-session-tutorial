@@ -104,3 +104,4 @@ venv.bak/
 
 # Etc
 .DS_Store
+creds

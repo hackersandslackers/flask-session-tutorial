@@ -20,7 +20,7 @@ setup(
     author_email='toddbirchard@gmail.com',
     classifiers=[
         'Programming Language :: Python :: 3',
-        'Programming Language :: Python :: 3.7',
+        'Programming Language :: Python :: 3.8',
     ],
     keywords='Flask Flask-Session Redis Session Tutorial',
     packages=find_packages(),
@@ -30,7 +30,7 @@ setup(
                       'flask_assets',
                       'flask_session',
                       'redis',
-                      'psycopg2-binary',
+                      'pymysql',
                       'wtforms'],
     extras_require={
         'dev': ['check-manifest'],

@@ -4,7 +4,6 @@ url = "https://pypi.org/simple"
 verify_ssl = true
 
 [dev-packages]
-Python-Dotenv = "*"
 Lesscpy = "*"
 CSSMin = "*"
 JSMin = "*"
@@ -18,6 +17,7 @@ Flask-Session = "*"
 PyMySQL = "*"
 WTForms = "*"
 Redis = "*"
+Python-Dotenv = "*"
 
 [requires]
 python_version = "3.8"

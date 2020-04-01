@@ -1,6 +1,11 @@
 """App configuration."""
-from os import environ
+from os import environ, path
 import redis
+
+from dotenv import load_dotenv
+
+basedir = path.abspath(os.path.dirname(__file__))
+load_dotenv(path.join(basedir, '.env'))
 
 
 class Config:
