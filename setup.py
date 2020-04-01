@@ -11,7 +11,7 @@ with open(path.join(here, 'README.md'), encoding='utf-8') as f:
 
 setup(
     name='Flask Session Tutorial',
-    version='0.0.1',
+    version='0.1.0',
     description='Example Flask project for implementing Flask-Session with Redis.',
     long_description=long_description,
     long_description_content_type='text/markdown',

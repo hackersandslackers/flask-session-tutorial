@@ -17,7 +17,7 @@ compile_auth_assets(app)
 @login_required
 def dashboard():
     """Serve logged in Dashboard."""
-    # session['redis_test'] = 'This is a session variable.'
+    session['redis_test'] = 'This is a session variable.'
     return render_template('dashboard.html',
                            title='Flask-Session Tutorial.',
                            template='dashboard-template',

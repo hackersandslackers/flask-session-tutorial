@@ -15,9 +15,9 @@ Flask-SQLAlchemy = "*"
 Flask-Login = "*"
 Flask-Assets = "*"
 Flask-Session = "*"
-Psycopg2-Binary = "*"
+PyMySQL = "*"
 WTForms = "*"
 Redis = "*"
 
 [requires]
-python_version = "3.7"
+python_version = "3.8"

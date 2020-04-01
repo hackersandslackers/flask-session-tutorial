@@ -23,19 +23,15 @@ def login_page():
     if current_user.is_authenticated:
         return redirect(url_for('main_bp.dashboard'))
     login_form = LoginForm(request.form)
-    # POST: Create user and redirect them to the app
     if request.method == 'POST':
         if login_form.validate():
-            # Get Form Fields
             email = request.form.get('email')
             password = request.form.get('password')
-            # Validate Login Attempt
-            user = User.query.filter_by(email=email).first()
-            if user:
-                if user.check_password(password=password):
-                    login_user(user)
-                    next = request.args.get('next')
-                    return redirect(next or url_for('main_bp.dashboard'))
+            user = User.query.filter_by(email=email).first()  # Validate Login Attempt
+            if user and user.check_password(password=password):
+                login_user(user)
+                next = request.args.get('next')
+                return redirect(next or url_for('main_bp.dashboard'))
         flash('Invalid username/password combination')
         return redirect(url_for('auth_bp.login_page'))
     # GET: Serve Log-in page
@@ -50,10 +46,8 @@ def login_page():
 def signup_page():
     """User sign-up page."""
     signup_form = SignupForm(request.form)
-    # POST: Sign user in
     if request.method == 'POST':
         if signup_form.validate():
-            # Get Form Fields
             name = request.form.get('name')
             email = request.form.get('email')
             password = request.form.get('password')
