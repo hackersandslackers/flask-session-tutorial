@@ -4,7 +4,7 @@ import redis
 
 from dotenv import load_dotenv
 
-basedir = path.abspath(os.path.dirname(__file__))
+basedir = path.abspath(path.dirname(__file__))
 load_dotenv(path.join(basedir, '.env'))
 
 

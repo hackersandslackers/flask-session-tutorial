@@ -1,9 +1,9 @@
 # Flask-Session Tutorial
 
 ![Python](https://img.shields.io/badge/Python-v^3.8-blue.svg?logo=python&longCache=true&logoColor=white&colorB=5e81ac&style=flat-square&colorA=4c566a)
-![Flask](https://img.shields.io/badge/Flask-v1.1.1-blue.svg?longCache=true&logo=flask&style=flat-square&logoColor=white&colorB=5e81ac&colorA=4c566a)
+![Flask](https://img.shields.io/badge/Flask-v^1.1.1-blue.svg?longCache=true&logo=flask&style=flat-square&logoColor=white&colorB=5e81ac&colorA=4c566a)
 ![Flask-Login](https://img.shields.io/badge/Flask--Login-v0.5.0-blue.svg?longCache=true&logo=flask&style=flat-square&logoColor=white&colorB=5e81ac&colorA=4c566a)
-![Flask-Assets](https://img.shields.io/badge/Flask--Assets-v0.12-blue.svg?longCache=true&logo=flask&style=flat-square&logoColor=white&colorB=5e81ac&colorA=4c566a)
+![Flask-Assets](https://img.shields.io/badge/Flask--Assets-v2.0-blue.svg?longCache=true&logo=flask&style=flat-square&logoColor=white&colorB=5e81ac&colorA=4c566a)
 ![Flask-Session](https://img.shields.io/badge/Flask--Session-v0.3.1-blue.svg?longCache=true&logo=flask&style=flat-square&logoColor=white&colorB=5e81ac&colorA=4c566a)
 ![Flask-SQLAlchemy](https://img.shields.io/badge/Flask--SQLAlchemy-v2.3.2-red.svg?longCache=true&style=flat-square&logo=flask&logoColor=white&colorA=4c566a&colorB=5e81ac)
 ![WTForms](https://img.shields.io/badge/WTForms-v2.2.1-blue.svg?longCache=true&logo=python&style=flat-square&logoColor=white&colorB=5e81ac&colorA=4c566a)
@@ -27,16 +27,16 @@ $ git clone https://github.com/hackersandslackers/flask-session-tutorial.git
 $ cd flask-session-tutorial
 $ pipenv shell
 $ pipenv update
-$ python3 main.py
+$ flask run
 ```
 
-Alternatively, try installing via `setup.py`:
+Alternatively, try installing via `requirements.txt`:
 
 ```shell
 $ git clone https://github.com/hackersandslackers/flask-session-tutorial.git
 $ cd flask-session-tutorial
-$ python3 setup.py install
-$ python3 main.py
+$ python3 -m pip install -r requirements.txt
+$ flask run
 ```
 -----
 
