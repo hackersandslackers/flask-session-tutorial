@@ -17,7 +17,7 @@ class Config:
 
     # Flask-Session
     SESSION_TYPE = 'redis'
-    SESSION_REDIS = redis.from_url(environ.get('SESSION_REDIS'))
+    SESSION_REDIS = redis.from_url('redis://localhost:6379')
 
     # Flask-Assets
     LESS_BIN = environ.get('LESS_BIN')

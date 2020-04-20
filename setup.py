@@ -29,9 +29,9 @@ setup(
                       'flask_sqlalchemy',
                       'flask_assets',
                       'flask_session',
+                      'flask-wtf'
                       'redis',
-                      'pymysql',
-                      'wtforms'],
+                      'pymysql'],
     extras_require={
         'dev': ['check-manifest'],
         'test': ['coverage'],

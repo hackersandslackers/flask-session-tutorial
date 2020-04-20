@@ -1,19 +1,20 @@
 """Create form logic."""
-from wtforms import Form, StringField, PasswordField, validators, SubmitField
-from wtforms.validators import ValidationError, DataRequired, Email, EqualTo, Length, Optional
+from flask_wtf import FlaskForm
+from wtforms import StringField, PasswordField, SubmitField
+from wtforms.validators import DataRequired, Email, EqualTo, Length, Optional
 
 
-class SignupForm(Form):
+class SignupForm(FlaskForm):
     """User Signup Form."""
     name = StringField('Name',
-                       validators=[DataRequired(message=('Enter a fake name or something.'))])
+                       validators=[DataRequired()])
     email = StringField('Email',
-                        validators=[Length(min=6, message=('Please enter a valid email address.')),
-                                    Email(message=('Please enter a valid email address.')),
-                                    DataRequired(message=('Please enter a valid email address.'))])
+                        validators=[Length(min=6, message=('Enter a valid email address.')),
+                                    Email(message=('Enter a valid email address.')),
+                                    DataRequired()])
     password = PasswordField('Password',
-                             validators=[DataRequired(message='Please enter a password.'),
-                                         Length(min=6, message=('Please select a stronger password.')),
+                             validators=[DataRequired(),
+                                         Length(min=6, message=('Select a stronger password.')),
                                          EqualTo('confirm', message='Passwords must match')])
     confirm = PasswordField('Confirm Your Password',)
     website = StringField('Website',
@@ -21,9 +22,9 @@ class SignupForm(Form):
     submit = SubmitField('Register')
 
 
-class LoginForm(Form):
+class LoginForm(FlaskForm):
     """User Login Form."""
-    email = StringField('Email', validators=[DataRequired('Please enter a valid email address.'),
-                                             Email('Please enter a valid email address.')])
-    password = PasswordField('Password', validators=[DataRequired('Uhh, your password tho?')])
+    email = StringField('Email', validators=[DataRequired(),
+                                             Email('Enter a valid email address.')])
+    password = PasswordField('Password', validators=[DataRequired()])
     submit = SubmitField('Log In')

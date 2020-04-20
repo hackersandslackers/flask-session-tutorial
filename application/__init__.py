@@ -13,8 +13,6 @@ sess = Session()
 def create_app():
     """Construct the core application."""
     app = Flask(__name__, instance_relative_config=False)
-
-    # Application Configuration
     app.config.from_object('config.Config')
 
     # Initialize Plugins
@@ -31,7 +29,6 @@ def create_app():
         app.register_blueprint(auth.auth_bp)
         compile_assets(app)
 
-        # Create Database Models
-        db.create_all()
+        db.create_all()  # Create Database Models
 
         return app

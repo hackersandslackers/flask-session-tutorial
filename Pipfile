@@ -15,7 +15,7 @@ Flask-Login = "*"
 Flask-Assets = "*"
 Flask-Session = "*"
 PyMySQL = "*"
-WTForms = "*"
+Flask-WTF = "*"
 Redis = "*"
 Python-Dotenv = "*"
 
