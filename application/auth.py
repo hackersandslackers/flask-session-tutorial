@@ -1,5 +1,5 @@
 """Routes for user authentication."""
-from flask import redirect, render_template, flash, Blueprint, request, url_for
+from flask import redirect, render_template, flash, Blueprint, request, url_for, session
 from flask_login import login_required, logout_user, current_user, login_user
 from flask import current_app as app
 from werkzeug.security import generate_password_hash
@@ -19,9 +19,8 @@ compile_auth_assets(app)
 @auth_bp.route('/login', methods=['GET', 'POST'])
 def login_page():
     """User login page."""
-    # Bypass Login screen if user is logged in
     if current_user.is_authenticated:
-        return redirect(url_for('main_bp.dashboard'))
+        return redirect(url_for('main_bp.dashboard'))  # Bypass Login screen if user is logged in
     login_form = LoginForm(request.form)
     if request.method == 'POST':
         if login_form.validate():

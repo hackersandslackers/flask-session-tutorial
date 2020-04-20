@@ -31,7 +31,8 @@ setup(
                       'flask_session',
                       'flask-wtf'
                       'redis',
-                      'pymysql'],
+                      'pymysql',
+                      'python-dotenv'],
     extras_require={
         'dev': ['check-manifest'],
         'test': ['coverage'],

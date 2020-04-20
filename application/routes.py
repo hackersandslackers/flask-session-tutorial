@@ -16,7 +16,7 @@ compile_auth_assets(app)
 @main_bp.route('/', methods=['GET'])
 @login_required
 def dashboard():
-    """Serve logged in Dashboard."""
+    """Logged in Dashboard screen."""
     session['redis_test'] = 'This is a session variable.'
     return render_template('dashboard.html',
                            title='Flask-Session Tutorial.',
@@ -28,7 +28,7 @@ def dashboard():
 @main_bp.route('/session', methods=['GET'])
 @login_required
 def session_view():
-    """Route which displays session variable value."""
+    """Display session variable value."""
     return render_template('session.html',
                            title='Flask-Session Tutorial.',
                            template='dashboard-template',
