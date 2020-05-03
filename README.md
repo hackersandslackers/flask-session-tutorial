@@ -18,11 +18,8 @@
 
 Source code for the accompanying tutorial found here: https://hackersandslackers.com/managing-user-session-variables-with-flask-sessions-and-redis/
 
-## Getting Started
 
-Deploy this repository by _installing the proper dependencies_ and _setting configuration values_.
-
-### Installation
+## Installation
 
 **Installation via `requirements.txt`**:
 
@@ -45,7 +42,7 @@ $ pipenv update
 $ flask run
 ```
 
-### Configuration
+## Configuration
 
 Configuration is handled by creating a **.env** file. This should contain the following variables (replace the values with your own):
 
