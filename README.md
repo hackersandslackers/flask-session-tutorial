@@ -24,7 +24,7 @@ Deploy this repository by _installing the proper dependencies_ and _setting conf
 
 ### Installation
 
-Installation via `requirements.txt`:
+**Installation via `requirements.txt`**:
 
 ```shell
 $ git clone https://github.com/hackersandslackers/flask-session-tutorial.git
@@ -35,7 +35,7 @@ $ pip3 install -r requirements.txt
 $ flask run
 ```
 
-Installation via [Pipenv](https://pipenv-fork.readthedocs.io/en/latest/):
+**Installation via [Pipenv](https://pipenv-fork.readthedocs.io/en/latest/)**:
 
 ```shell
 $ git clone https://github.com/hackersandslackers/flask-session-tutorial.git
