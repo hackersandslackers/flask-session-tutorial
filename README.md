@@ -20,7 +20,22 @@ Source code for the accompanying tutorial found here: https://hackersandslackers
 
 ## Getting Started
 
-Installation is recommended with Pipenv:
+Deploy this repository by _installing the proper dependencies_ and _setting configuration values_.
+
+### Installation
+
+Installation via `requirements.txt`:
+
+```shell
+$ git clone https://github.com/hackersandslackers/flask-session-tutorial.git
+$ cd flask-session-tutorial
+$ python3 -m venv myenv
+$ source myenv/bin/activate
+$ pip3 install -r requirements.txt
+$ flask run
+```
+
+Installation via [Pipenv](https://pipenv-fork.readthedocs.io/en/latest/):
 
 ```shell
 $ git clone https://github.com/hackersandslackers/flask-session-tutorial.git
@@ -30,13 +45,16 @@ $ pipenv update
 $ flask run
 ```
 
-Alternatively, try installing via `requirements.txt`:
+### Configuration
 
-```shell
-$ git clone https://github.com/hackersandslackers/flask-session-tutorial.git
-$ cd flask-session-tutorial
-$ python3 -m pip install -r requirements.txt
-$ flask run
+Configuration is handled by creating a **.env** file. This should contain the following variables (replace the values with your own):
+
+```.env
+SECRET_KEY="YOURSECRETKEY"
+FLASK_ENV="production"
+SESSION_REDIS="redis://:[PASSWORD]@[HOST]:[PORT]"
+SQLALCHEMY_DATABASE_URI="mysql+pymysql://[USER]:[PASSWORD]@[HOST]:[PORT]/[DATABASE_NAME]"
+SQLALCHEMY_TRACK_MODIFICATIONS=False
 ```
 -----
 
