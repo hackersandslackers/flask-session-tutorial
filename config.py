@@ -16,8 +16,9 @@ class Config:
     FLASK_APP = 'wsgi.py'
 
     # Flask-Session
+    REDIS_URI = environ.get('SESSION_REDIS')
     SESSION_TYPE = 'redis'
-    SESSION_REDIS = redis.from_url('redis://localhost:6379')
+    SESSION_REDIS = redis.from_url(REDIS_URI)
 
     # Flask-Assets
     LESS_BIN = environ.get('LESS_BIN')
