@@ -10,7 +10,7 @@ class User(UserMixin, db.Model):
     __tablename__ = 'flasksession-users'
     id = db.Column(db.Integer,
                    primary_key=True)
-    name = db.Column(db.String,
+    name = db.Column(db.String(200),
                      nullable=False,
                      unique=False)
     email = db.Column(db.String(40),
@@ -42,4 +42,4 @@ class User(UserMixin, db.Model):
         return check_password_hash(self.password, password)
 
     def __repr__(self):
-        return '<User {}>'.format(self.username)
+        return '<User {}>'.format(self.name)

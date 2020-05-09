@@ -41,7 +41,7 @@ def compile_main_assets(app):
         less_bundle.build(force=True)
 
 
-def compile_assets(app):
+def compile_static_assets(app):
     """Compile all asset bundles."""
     compile_auth_assets(app)
     compile_main_assets(app)
