@@ -11,9 +11,9 @@ class Config:
     """Set Flask configuration variables from .env file."""
 
     # General Config
-    SECRET_KEY = environ.get('SECRET_KEY')
+    FLASK_APP = environ.get('FLASK_APP')
     FLASK_ENV = environ.get('FLASK_ENV')
-    FLASK_APP = 'wsgi.py'
+    SECRET_KEY = environ.get('SECRET_KEY')
 
     # Flask-Session
     REDIS_URI = environ.get('SESSION_REDIS')

@@ -11,7 +11,7 @@ sess = Session()
 
 
 def create_app():
-    """Construct the core application."""
+    """Construct the core flask_session_tutorial."""
     app = Flask(__name__, instance_relative_config=False)
     app.config.from_object('config.Config')
 
@@ -21,7 +21,6 @@ def create_app():
     sess.init_app(app)
 
     with app.app_context():
-        # Import parts of our application
         from . import routes
         from . import auth
         from .assets import compile_static_assets

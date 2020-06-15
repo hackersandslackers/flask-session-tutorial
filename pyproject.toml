@@ -1,5 +1,5 @@
 [tool.poetry]
-name = "Flask Session Tutorial"
+name = "flask_session_tutorial"
 version = "0.1.0"
 description = "Example Flask project for implementing Flask-Session with Redis."
 authors = ["Todd Birchard <toddbirchard@gmail.com>"]
@@ -12,7 +12,7 @@ documentation = "https://hackersandslackers.com/managing-user-session-variables-
 keywords = ["Flask",
             "Flask-Session",
             "Redis",
-            "User Management",
+            "User sessions",
             "Tutorial"]
 
 [tool.poetry.dependencies]
