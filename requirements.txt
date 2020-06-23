@@ -1,5 +1,5 @@
 attrs==19.3.0
-cachelib==0.1
+cachelib==0.1.1
 click==7.1.2
 cssmin==0.2.0
 dnspython==1.16.0
@@ -16,11 +16,11 @@ Jinja2==2.11.2
 jsmin==2.2.2
 lesscpy==0.14.0
 MarkupSafe==1.1.1
-more-itertools==8.3.0
+more-itertools==8.4.0
 packaging==20.4
 pluggy==0.13.1
 ply==3.11
-py==1.8.1
+py==1.8.2
 PyMySQL==0.9.3
 pyparsing==2.4.7
 pytest==5.4.3
