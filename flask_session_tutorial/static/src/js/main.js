@@ -1,7 +1,7 @@
 // Remove Alert on Close
 let alertButton = document.querySelector('.alert button');
 
-if (alertbutton){
+if (alertButton){
   alertButton.addEventListener('click', function (event) {
 
   	// If the clicked element doesn't have the right selector, bail

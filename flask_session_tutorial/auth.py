@@ -14,7 +14,6 @@ auth_bp = Blueprint(
     template_folder='templates',
     static_folder='static'
 )
-compile_auth_assets(app)
 
 
 @auth_bp.route('/signup', methods=['GET', 'POST'])

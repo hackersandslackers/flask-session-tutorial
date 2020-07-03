@@ -13,8 +13,6 @@ main_bp = Blueprint(
     template_folder='templates',
     static_folder='static'
 )
-compile_auth_assets(app)
-
 
 @main_bp.route('/', methods=['GET'])
 @login_required

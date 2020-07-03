@@ -23,12 +23,13 @@ def create_app():
     with app.app_context():
         from . import routes
         from . import auth
-        from .assets import compile_static_assets
+        from .assets import compile_static_assets, compile_auth_assets
         app.register_blueprint(routes.main_bp)
         app.register_blueprint(auth.auth_bp)
 
         # Create static asset bundles
         compile_static_assets(app)
+        compile_auth_assets(app)
 
         # Create Database Models
         db.create_all()
