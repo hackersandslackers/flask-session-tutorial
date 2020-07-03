@@ -11,7 +11,7 @@
 ![Redis](https://img.shields.io/badge/Redis-v3.2.1-red.svg?longCache=true&style=flat-square&logo=redis&logoColor=white&colorA=4c566a&colorB=bf616a)
 ![GitHub Last Commit](https://img.shields.io/github/last-commit/google/skia.svg?style=flat-square&colorA=4c566a&colorB=a3be8c&logo=GitHub)
 [![GitHub Issues](https://img.shields.io/github/issues/hackersandslackers/flask-session-tutorial.svg?style=flat-square&colorA=4c566a&logo=GitHub&colorB=ebcb8b)](https://github.com/hackersandslackers/flask-session-tutorial/issues)
-[![GitHub Stars](https://img.shields.io/github/stars/hackersandslackers/flask-session-tutorial.svg?style=flat-square8&colorA=4c566a&logo=GitHub&colorB=ebcb8b)](https://github.com/hackersandslackers/flask-session-tutorial/stargazers)
+[![GitHub Stars](https://img.shields.io/github/stars/hackersandslackers/flask-session-tutorial.svg?style=flat-square&colorA=4c566a&logo=GitHub&colorB=ebcb8b)](https://github.com/hackersandslackers/flask-session-tutorial/stargazers)
 [![GitHub Forks](https://img.shields.io/github/forks/hackersandslackers/flask-session-tutorial.svg?style=flat-square&colorA=4c566a&logo=GitHub&colorB=ebcb8b)](https://github.com/hackersandslackers/flask-session-tutorial/network)
 
 ![Flask Session Redis Tutorial](https://github.com/hackersandslackers/flask-session-tutorial/blob/master/.github/flask-session2@2x.jpg?raw=true)
@@ -40,6 +40,16 @@ $ cd flask-session-tutorial
 $ pipenv shell
 $ pipenv update
 $ flask run
+```
+
+**Installation via [Poetry](https://python-poetry.org/)**:
+
+```shell
+$ git clone https://github.com/hackersandslackers/flask-session-tutorial.git
+$ cd flask-session-tutorial
+$ poetry shell
+$ poetry update
+$ poetry run
 ```
 
 ## Usage
