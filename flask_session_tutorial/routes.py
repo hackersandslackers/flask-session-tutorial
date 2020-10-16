@@ -1,10 +1,10 @@
 """Routes for logged-in flask_session_tutorial."""
-from flask import Blueprint, render_template, redirect, url_for, session
-from flask_login import current_user, logout_user
+from flask import Blueprint
 from flask import current_app as app
-from .assets import compile_auth_assets
-from flask_login import login_required
+from flask import redirect, render_template, session, url_for
+from flask_login import current_user, login_required, logout_user
 
+from .assets import compile_auth_assets
 
 # Blueprint Configuration
 main_bp = Blueprint(

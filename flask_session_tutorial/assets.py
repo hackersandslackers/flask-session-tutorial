@@ -1,5 +1,5 @@
 """Compile static asset bundles."""
-from flask_assets import Environment, Bundle
+from flask_assets import Bundle, Environment
 
 
 def compile_auth_assets(app):
@@ -24,7 +24,7 @@ def compile_auth_assets(app):
     assets.register('less_all', less_bundle)
     assets.register('js_all', js_bundle)
     # Build assets in development mode
-    if app.config['FLASK_ENV'] == 'development':
+    if app.config['FLASK_ENV'] != 'production':
         less_bundle.build(force=True)
         js_bundle.build()
 
@@ -44,7 +44,7 @@ def compile_main_assets(app):
     # Register assets
     assets.register('less_all', less_bundle)
     # Build assets in development mode
-    if app.config['FLASK_ENV'] == 'development':
+    if app.config['FLASK_ENV'] != 'production':
         less_bundle.build(force=True)
 
 
