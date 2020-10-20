@@ -16,58 +16,38 @@
 
 ![Flask Session Redis Tutorial](https://github.com/hackersandslackers/flask-session-tutorial/blob/master/.github/flask-session2@2x.jpg?raw=true)
 
-Source code for the accompanying tutorial found here: https://hackersandslackers.com/managing-user-session-variables-with-flask-sessions-and-redis/
+**Tutorial**: https://hackersandslackers.com/managing-user-session-variables-with-flask-sessions-and-redis/
 
+# Getting Started
 
-## Installation
+Get set up locally in two steps:
 
-**Installation via `requirements.txt`**:
-
-```shell
-$ git clone https://github.com/hackersandslackers/flask-session-tutorial.git
-$ cd flask-session-tutorial
-$ python3 -m venv myenv
-$ source myenv/bin/activate
-$ pip3 install -r requirements.txt
-$ flask run
-```
-
-**Installation via [Pipenv](https://pipenv-fork.readthedocs.io/en/latest/)**:
-
-```shell
-$ git clone https://github.com/hackersandslackers/flask-session-tutorial.git
-$ cd flask-session-tutorial
-$ pipenv shell
-$ pipenv update
-$ flask run
-```
-
-**Installation via [Poetry](https://python-poetry.org/)**:
-
-```shell
-$ git clone https://github.com/hackersandslackers/flask-session-tutorial.git
-$ cd flask-session-tutorial
-$ poetry shell
-$ poetry update
-$ poetry run
-```
-
-## Usage
+### Environment Variables
 
 Replace the values in **.env.example** with your values and rename this file to **.env**:
 
-* `FLASK_APP`: Entry point of your application (should be `wsgi.py`).
-* `FLASK_ENV`: The environment to run your app in (either `development` or `production`).
+* `FLASK_APP`: Entry point of your application; should be `wsgi.py`.
+* `FLASK_ENV`: The environment in which to run your application; either `development` or `production`.
 * `SECRET_KEY`: Randomly generated string of characters used to encrypt your app's data.
 * `SQLALCHEMY_DATABASE_URI`: Connection URI of a SQL database.
 * `SESSION_REDIS`: Connection URI of a Redis instance.
-* `LESS_BIN`: Path to your local LESS installation via `which lessc` (optional for static assets).
-* `ASSETS_DEBUG`: Debug asset creation and bundling in `development` (optional).
-* `LESS_RUN_IN_DEBUG`: Debug LESS while in `development` (optional).
-* `COMPRESSOR_DEBUG`: Debug asset compression while in `development` (optional).
+* `LESS_BIN` *(optional for static assets)*: Path to your local LESS installation via `which lessc`.
+* `ASSETS_DEBUG` *(optional)*: Debug asset creation and bundling in `development`.
+* `LESS_RUN_IN_DEBUG` *(optional)*: Debug LESS while in `development`.
+* `COMPRESSOR_DEBUG` *(optional)*: Debug asset compression while in `development`.
 
 
 *Remember never to commit secrets saved in .env files to Github.*
+
+### Installation
+
+Get up and running with `make deploy`:
+
+```shell
+$ git clone https://github.com/hackersandslackers/flask-session-tutorial.git
+$ cd flask-session-tutorial
+$ make deploy
+``` 
 
 -----
 

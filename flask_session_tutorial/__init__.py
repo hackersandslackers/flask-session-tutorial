@@ -12,7 +12,7 @@ sess = Session()
 def create_app():
     """Construct the core flask_session_tutorial."""
     app = Flask(__name__, instance_relative_config=False)
-    app.config.from_object('config.Config')
+    app.config.from_object("config.Config")
 
     # Initialize Plugins
     db.init_app(app)
@@ -23,6 +23,7 @@ def create_app():
         from . import routes
         from . import auth
         from .assets import compile_static_assets, compile_auth_assets
+
         app.register_blueprint(routes.main_bp)
         app.register_blueprint(auth.auth_bp)
 
