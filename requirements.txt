@@ -1,4 +1,4 @@
-attrs==20.2.0
+attrs==20.3.0
 cachelib==0.1.1
 click==7.1.2
 cssmin==0.2.0
