@@ -19,7 +19,7 @@ markupsafe==1.1.1; python_version >= "2.7" and python_full_version < "3.0.0" or 
 mypy-extensions==0.4.3; python_version >= "3.6"
 pathspec==0.8.0; python_version >= "3.6" and python_full_version < "3.0.0" or python_full_version >= "3.5.0" and python_version >= "3.6"
 protobuf==3.14.0; python_version >= "2.7" and python_full_version < "3.0.0" or python_full_version >= "3.5.0"
-pymysql==0.10.1
+pymysql==1.0.2
 python-dotenv==0.17.1
 redis==3.5.3; (python_version >= "2.7" and python_full_version < "3.0.0") or (python_full_version >= "3.5.0")
 regex==2020.10.15; python_version >= "3.6"
