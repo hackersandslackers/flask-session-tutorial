@@ -29,11 +29,11 @@ pymysql = "*"
 redis = "*"
 email_validator = "*"
 python-dotenv = "*"
-black = "^20.8b1"
+black = "^22.1"
 ddtrace = "^0.51.1"
 
 [tool.poetry.dev-dependencies]
-black = "^20.8b1"
+black = "^22.1"
 lesscpy = "*"
 cssmin = "*"
 jsmin = "*"
