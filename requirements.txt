@@ -1,6 +1,6 @@
 appdirs==1.4.4; python_version >= "3.6"
 black==20.8b1; python_version >= "3.6"
-cachelib==0.2.0
+cachelib==0.6.0
 click==7.1.2; python_version >= "3.6" and python_full_version < "3.0.0" or python_full_version >= "3.5.0" and python_version >= "3.6"
 ddtrace==0.44.0; (python_version >= "2.7" and python_full_version < "3.0.0") or (python_full_version >= "3.5.0")
 dnspython==2.0.0; python_version >= "3.6"
