@@ -30,7 +30,7 @@ redis = "*"
 email_validator = "*"
 python-dotenv = "*"
 black = "^20.8b1"
-ddtrace = "^0.51.1"
+ddtrace = "^0.59.2"
 
 [tool.poetry.dev-dependencies]
 black = "^20.8b1"
