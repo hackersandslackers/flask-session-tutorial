@@ -3,13 +3,11 @@ from flask import Flask
 from flask_login import LoginManager
 from flask_session import Session
 from flask_sqlalchemy import SQLAlchemy
-from ddtrace import patch_all
 
 
 db = SQLAlchemy()
 login_manager = LoginManager()
 sess = Session()
-patch_all()
 
 
 def create_app():
