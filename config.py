@@ -1,5 +1,5 @@
 """App configuration."""
-from os import environ, path
+from os import environ, path, system
 
 import redis
 from dotenv import load_dotenv
@@ -12,8 +12,9 @@ class Config:
     """Set Flask configuration variables from .env file."""
 
     # General Config
+    ENVIRONMENT = environ.get("ENVIRONMENT")
     FLASK_APP = environ.get("FLASK_APP")
-    FLASK_ENV = environ.get("FLASK_ENV")
+    FLASK_DEBUG = environ.get("FLASK_DEBUG")
     SECRET_KEY = environ.get("SECRET_KEY")
 
     # Flask-Session
@@ -22,7 +23,7 @@ class Config:
     SESSION_REDIS = redis.from_url(REDIS_URI)
 
     # Flask-Assets
-    LESS_BIN = environ.get("LESS_BIN")
+    LESS_BIN = system("which lessc")
     ASSETS_DEBUG = False
     LESS_RUN_IN_DEBUG = False
 

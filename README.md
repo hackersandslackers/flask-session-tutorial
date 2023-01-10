@@ -1,8 +1,8 @@
 # Flask-Session Tutorial
 
-![Python](https://img.shields.io/badge/Python-v^3.8-blue.svg?logo=python&longCache=true&logoColor=white&colorB=5e81ac&style=flat-square&colorA=4c566a)
-![Flask](https://img.shields.io/badge/Flask-v^2.1.1-blue.svg?longCache=true&logo=flask&style=flat-square&logoColor=white&colorB=5e81ac&colorA=4c566a)
-![Flask-Login](https://img.shields.io/badge/Flask--Login-v0.6.0-blue.svg?longCache=true&logo=flask&style=flat-square&logoColor=white&colorB=5e81ac&colorA=4c566a)
+![Python](https://img.shields.io/badge/Python-v^3.9-blue.svg?logo=python&longCache=true&logoColor=white&colorB=5e81ac&style=flat-square&colorA=4c566a)
+![Flask](https://img.shields.io/badge/Flask-v^2.2.2-blue.svg?longCache=true&logo=flask&style=flat-square&logoColor=white&colorB=5e81ac&colorA=4c566a)
+![Flask-Login](https://img.shields.io/badge/Flask--Login-v0.6.2-blue.svg?longCache=true&logo=flask&style=flat-square&logoColor=white&colorB=5e81ac&colorA=4c566a)
 ![Flask-Assets](https://img.shields.io/badge/Flask--Assets-v2.0-blue.svg?longCache=true&logo=flask&style=flat-square&logoColor=white&colorB=5e81ac&colorA=4c566a)
 ![Flask-Session](https://img.shields.io/badge/Flask--Session-v0.4.0-blue.svg?longCache=true&logo=flask&style=flat-square&logoColor=white&colorB=5e81ac&colorA=4c566a)
 ![Flask-SQLAlchemy](https://img.shields.io/badge/Flask--SQLAlchemy-v2.5.1-red.svg?longCache=true&style=flat-square&logo=flask&logoColor=white&colorA=4c566a&colorB=5e81ac)
@@ -18,7 +18,7 @@
 
 **Tutorial**: https://hackersandslackers.com/managing-user-session-variables-with-flask-sessions-and-redis/
 
-# Getting Started
+## Getting Started
 
 Get set up locally in two steps:
 
@@ -27,7 +27,7 @@ Get set up locally in two steps:
 Replace the values in **.env.example** with your values and rename this file to **.env**:
 
 * `FLASK_APP`: Entry point of your application; should be `wsgi.py`.
-* `FLASK_ENV`: The environment in which to run your application; either `development` or `production`.
+* `FLASK_DEBUG`: Toggle debug mode on (`True`) or off (`False`).
 * `SECRET_KEY`: Randomly generated string of characters used to encrypt your app's data.
 * `SQLALCHEMY_DATABASE_URI`: Connection URI of a SQL database.
 * `SESSION_REDIS`: Connection URI of a Redis instance.
@@ -36,7 +36,6 @@ Replace the values in **.env.example** with your values and rename this file to 
 * `LESS_RUN_IN_DEBUG` *(optional)*: Debug LESS while in `development`.
 * `COMPRESSOR_DEBUG` *(optional)*: Debug asset compression while in `development`.
 
-
 *Remember never to commit secrets saved in .env files to Github.*
 
 ### Installation
@@ -44,10 +43,10 @@ Replace the values in **.env.example** with your values and rename this file to 
 Get up and running with `make deploy`:
 
 ```shell
-$ git clone https://github.com/hackersandslackers/flask-session-tutorial.git
-$ cd flask-session-tutorial
-$ make deploy
-``` 
+git clone https://github.com/hackersandslackers/flask-session-tutorial.git
+cd flask-session-tutorial
+make deploy
+```
 
 -----
 
