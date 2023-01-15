@@ -18,7 +18,7 @@ class Config:
     SECRET_KEY = environ.get("SECRET_KEY")
 
     # Flask-Session
-    REDIS_URI = environ.get("SESSION_REDIS")
+    REDIS_URI = environ.get("REDIS_URI")
     SESSION_TYPE = "redis"
     SESSION_REDIS = redis.from_url(REDIS_URI)
 

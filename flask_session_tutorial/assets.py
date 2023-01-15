@@ -3,7 +3,7 @@ from flask_assets import Bundle, Environment
 
 
 def compile_auth_assets(app):
-    """Configure authorization asset bundles."""
+    """Generate static assets for the auth views."""
     assets = Environment(app)
     Environment.auto_build = True
     Environment.debug = False
@@ -26,7 +26,7 @@ def compile_auth_assets(app):
 
 
 def compile_main_assets(app):
-    """Configure logged-in asset bundles."""
+    """Generate static assets for main views."""
     assets = Environment(app)
     Environment.auto_build = True
     Environment.debug = False

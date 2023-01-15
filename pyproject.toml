@@ -1,5 +1,5 @@
 [tool.poetry]
-name = "flask_session_tutorial"
+name = "flask-session-tutorial"
 version = "0.1.0"
 description = "Example Flask project for implementing Flask-Session with Redis."
 authors = ["Todd Birchard <todd@hackersandslackers.com>"]
@@ -34,6 +34,7 @@ isort = "*"
 lesscpy = "*"
 cssmin = "*"
 jsmin = "*"
+uwsgi = "^2.0.21"
 
 [tool.poetry.scripts]
 run = "wsgi:app"

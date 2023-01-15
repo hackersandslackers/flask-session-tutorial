@@ -36,7 +36,7 @@ $(VIRTUAL_ENV):
 
 .PHONY: run
 run: env
-	export LESS_BIN=$(shell which lessc)
+	export LESS_BIN=$(shell which lessc) && \
 	uwsgi --http 127.0.0.1:8082 --master --module wsgi:app --processes 4 --threads 2
 
 
@@ -75,7 +75,7 @@ update: env
 
 .PHONY: format
 format: env
-	$(LOCAL_PYTHON) -m isort --multi-line=3 .
+	$(LOCAL_PYTHON) -m isort --multi-line=3 . && \
 	$(LOCAL_PYTHON) -m black .
 
 

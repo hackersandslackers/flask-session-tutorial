@@ -7,7 +7,7 @@
 
 {% block nav %}
     <nav style="position:absolute; top:20px; right:20px;">
-        <a href="{{ url_for('main_bp.session_view') }}" style="color:white">Session test</a>
+        <a href="{{ url_for('main.session_view') }}" style="color:white">Session test</a>
     </nav>
 {% endblock %}
 
@@ -16,6 +16,6 @@
 
     {% if current_user.is_authenticated %}
         <p>Hi {{ current_user.name }}!</p>
-        <a href="{{ url_for('main_bp.logout') }}">Log out</a>
+        <a href="{{ url_for('main.logout') }}">Log out</a>
     {% endif %}
 {% endblock %}

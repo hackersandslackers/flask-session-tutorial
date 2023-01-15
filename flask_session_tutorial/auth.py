@@ -1,21 +1,16 @@
 """Routes for user authentication."""
-from flask import Blueprint
-from flask import current_app as app
-from flask import flash, redirect, render_template, request, url_for
+from flask import Blueprint, flash, redirect, render_template, request, url_for
 from flask_login import current_user, login_user
 
-from . import login_manager
-from .assets import compile_auth_assets
-from .forms import LoginForm, SignupForm
-from .models import User, db
+from flask_session_tutorial import login_manager
+from flask_session_tutorial.forms import LoginForm, SignupForm
+from flask_session_tutorial.models import User, db
 
 # Blueprint Configuration
-auth_bp = Blueprint(
-    "auth_bp", __name__, template_folder="templates", static_folder="static"
-)
+auth = Blueprint("auth", __name__, template_folder="templates", static_folder="static")
 
 
-@auth_bp.route("/signup", methods=["GET", "POST"])
+@auth.route("/signup", methods=["GET", "POST"])
 def signup():
     """
     Sign-up form to create new user accounts.
@@ -26,15 +21,13 @@ def signup():
     if form.validate_on_submit():
         existing_user = User.query.filter_by(email=form.email.data).first()
         if existing_user is None:
-            user = User(
-                name=form.name.data, email=form.email.data, website=form.website.data
-            )
+            user = User(name=form.name.data, email=form.email.data, website=form.website.data)
             user.set_password(form.password.data)
             db.session.add(user)
             db.session.commit()  # Create new user
             login_user(user)  # Log in as newly created user
             print(user)
-            return redirect(url_for("main_bp.dashboard"))
+            return redirect(url_for("main.dashboard"))
         flash("A user already exists with that email address.")
     return render_template(
         "signup.jinja2",
@@ -45,7 +38,7 @@ def signup():
     )
 
 
-@auth_bp.route("/login", methods=["GET", "POST"])
+@auth.route("/login", methods=["GET", "POST"])
 def login():
     """
     Log-in page for registered users.
@@ -53,19 +46,17 @@ def login():
     POST: Validate form and redirect user to dashboard.
     """
     if current_user.is_authenticated:
-        return redirect(url_for("main_bp.dashboard"))  # Bypass if user is logged in
+        return redirect(url_for("main.dashboard"))  # Bypass if user is logged in
 
     form = LoginForm()
     if form.validate_on_submit():
-        user = User.query.filter_by(
-            email=form.email.data
-        ).first()  # Validate Login Attempt
+        user = User.query.filter_by(email=form.email.data).first()  # Validate Login Attempt
         if user and user.check_password(password=form.password.data):
             login_user(user)
             next_page = request.args.get("next")
-            return redirect(next_page or url_for("main_bp.dashboard"))
+            return redirect(next_page or url_for("main.dashboard"))
         flash("Invalid username/password combination")
-        return redirect(url_for("auth_bp.login"))
+        return redirect(url_for("auth.login"))
     return render_template(
         "login.jinja2",
         form=form,
@@ -87,4 +78,4 @@ def load_user(user_id):
 def unauthorized():
     """Redirect unauthorized users to Login page."""
     flash("You must be logged in to view that page.")
-    return redirect(url_for("auth_bp.login"))
+    return redirect(url_for("auth.login"))

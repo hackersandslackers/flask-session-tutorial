@@ -7,12 +7,10 @@ from flask_login import current_user, login_required, logout_user
 from .assets import compile_auth_assets
 
 # Blueprint Configuration
-main_bp = Blueprint(
-    "main_bp", __name__, template_folder="templates", static_folder="static"
-)
+main = Blueprint("main", __name__, template_folder="templates", static_folder="static")
 
 
-@main_bp.route("/", methods=["GET"])
+@main.route("/", methods=["GET"])
 @login_required
 def dashboard():
     """Logged in Dashboard screen."""
@@ -26,7 +24,7 @@ def dashboard():
     )
 
 
-@main_bp.route("/session", methods=["GET"])
+@main.route("/session", methods=["GET"])
 @login_required
 def session_view():
     """Display session variable value."""
@@ -38,9 +36,9 @@ def session_view():
     )
 
 
-@main_bp.route("/logout")
+@main.route("/logout")
 @login_required
 def logout():
     """User log-out logic."""
     logout_user()
-    return redirect(url_for("auth_bp.login"))
+    return redirect(url_for("auth.login"))
