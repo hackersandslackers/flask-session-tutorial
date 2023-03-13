@@ -108,3 +108,7 @@ venv.bak/
 
 # Etc
 .DS_Store
+
+# Gunicorn
+flask.sock
+gunicorn.conf.py

@@ -26,7 +26,6 @@ def signup():
             db.session.add(user)
             db.session.commit()  # Create new user
             login_user(user)  # Log in as newly created user
-            print(user)
             return redirect(url_for("main.dashboard"))
         flash("A user already exists with that email address.")
     return render_template(

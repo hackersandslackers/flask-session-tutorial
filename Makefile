@@ -2,6 +2,7 @@ PROJECT_NAME := $(shell basename $CURDIR)
 VIRTUAL_ENV := $(CURDIR)/.venv
 LOCAL_PYTHON := $(VIRTUAL_ENV)/bin/python3
 
+
 define HELP
 Manage $(PROJECT_NAME). Usage:
 
@@ -37,7 +38,7 @@ $(VIRTUAL_ENV):
 .PHONY: run
 run: env
 	export LESS_BIN=$(shell which lessc) && \
-	uwsgi --http 127.0.0.1:8082 --master --module wsgi:app --processes 4 --threads 2
+	$(LOCAL_PYTHON) -m gunicorn
 
 
 .PHONY: install
@@ -67,7 +68,6 @@ test: env
 .PHONY: update
 update: env
 	$(LOCAL_PYTHON) -m pip install --upgrade pip setuptools wheel && \
-	$(LOCAL_PYTHON) -m pip install --no-cache-dir uwsgi && \
 	poetry update && \
 	poetry export -f requirements.txt --output requirements.txt --without-hashes && \
 	echo Installed dependencies in \`${VIRTUAL_ENV}\`;
