@@ -111,4 +111,3 @@ venv.bak/
 
 # Gunicorn
 flask.sock
-gunicorn.conf.py
