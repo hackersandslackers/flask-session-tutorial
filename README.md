@@ -1,10 +1,10 @@
 # Flask-Session Tutorial
 
-![Python](https://img.shields.io/badge/Python-v^3.9-blue.svg?logo=python&longCache=true&logoColor=white&colorB=5e81ac&style=flat-square&colorA=4c566a)
-![Flask](https://img.shields.io/badge/Flask-v^2.2.2-blue.svg?longCache=true&logo=flask&style=flat-square&logoColor=white&colorB=5e81ac&colorA=4c566a)
+![Python](https://img.shields.io/badge/Python-v^3.10-blue.svg?logo=python&longCache=true&logoColor=white&colorB=5e81ac&style=flat-square&colorA=4c566a)
+![Flask](https://img.shields.io/badge/Flask-v^2.3.3-blue.svg?longCache=true&logo=flask&style=flat-square&logoColor=white&colorB=5e81ac&colorA=4c566a)
 ![Flask-Login](https://img.shields.io/badge/Flask--Login-v0.6.2-blue.svg?longCache=true&logo=flask&style=flat-square&logoColor=white&colorB=5e81ac&colorA=4c566a)
-![Flask-Session](https://img.shields.io/badge/Flask--Session-v0.4.0-blue.svg?longCache=true&logo=flask&style=flat-square&logoColor=white&colorB=5e81ac&colorA=4c566a)
-![Redis](https://img.shields.io/badge/Redis-v4.4.2-red.svg?longCache=true&style=flat-square&logo=redis&logoColor=white&colorA=4c566a&colorB=bf616a)
+![Flask-Session](https://img.shields.io/badge/Flask--Session-v0.5.0-blue.svg?longCache=true&logo=flask&style=flat-square&logoColor=white&colorB=5e81ac&colorA=4c566a)
+![Redis](https://img.shields.io/badge/Redis-v5.0.0-red.svg?longCache=true&style=flat-square&logo=redis&logoColor=white&colorA=4c566a&colorB=bf616a)
 ![GitHub Last Commit](https://img.shields.io/github/last-commit/google/skia.svg?style=flat-square&colorA=4c566a&colorB=a3be8c&logo=GitHub)
 [![GitHub Issues](https://img.shields.io/github/issues/hackersandslackers/flask-session-tutorial.svg?style=flat-square&colorA=4c566a&logo=GitHub&colorB=ebcb8b)](https://github.com/hackersandslackers/flask-session-tutorial/issues)
 [![GitHub Stars](https://img.shields.io/github/stars/hackersandslackers/flask-session-tutorial.svg?style=flat-square&colorA=4c566a&logo=GitHub&colorB=ebcb8b)](https://github.com/hackersandslackers/flask-session-tutorial/stargazers)
@@ -22,7 +22,7 @@ Get set up locally in two steps:
 
 Replace the values in **.env.example** with your values and rename this file to **.env**:
 
-* `FLASK_APP`: Entry point of your application; should be `wsgi.py`.
+* `FLASK_APP`: Entry point of your application; should be `main.py`.
 * `FLASK_DEBUG`: Toggle debug mode on (`True`) or off (`False`).
 * `SECRET_KEY`: Randomly generated string of characters used to encrypt your app's data.
 * `SQLALCHEMY_DATABASE_URI`: Connection URI of a SQL database.
