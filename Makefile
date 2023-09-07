@@ -7,6 +7,7 @@ Manage $(PROJECT_NAME). Usage:
 
 make run        - Run $(PROJECT_NAME) locally.
 make install    - Create local virtualenv & install dependencies.
+make deploy     - Set up project & run locally.
 make update     - Update dependencies via Poetry and output resulting `requirements.txt`.
 make format     - Run Python code formatter & sort dependencies.
 make lint       - Check code formatting with flake8.
@@ -16,7 +17,7 @@ endef
 export HELP
 
 
-.PHONY: run install update format lint clean help
+.PHONY: run install deploy update format lint clean help
 
 all help:
 	@echo "$$HELP"
@@ -40,6 +41,11 @@ install: env
 	$(LOCAL_PYTHON) -m pip install -r requirements.txt && \
 	npm i -g less && \
 	echo Installed dependencies in \`${VIRTUAL_ENV}\`;
+
+.PHONY: deploy
+deploy:
+	make install && \
+	make run
 
 .PHONY: test
 test: env
