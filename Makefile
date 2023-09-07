@@ -2,7 +2,6 @@ PROJECT_NAME := $(shell basename $CURDIR)
 VIRTUAL_ENV := $(CURDIR)/.venv
 LOCAL_PYTHON := $(VIRTUAL_ENV)/bin/python3
 
-
 define HELP
 Manage $(PROJECT_NAME). Usage:
 
@@ -24,16 +23,13 @@ export HELP
 all help:
 	@echo "$$HELP"
 
-
 env: $(VIRTUAL_ENV)
-
 
 $(VIRTUAL_ENV):
 	if [ ! -d $(VIRTUAL_ENV) ]; then \
 		echo "Creating Python virtual env in \`${VIRTUAL_ENV}\`"; \
 		python3 -m venv $(VIRTUAL_ENV); \
 	fi
-
 
 .PHONY: run
 run: env

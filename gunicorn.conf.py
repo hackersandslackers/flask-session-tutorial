@@ -3,7 +3,7 @@ from os import path, environ
 
 BASE_DIR = path.abspath(path.dirname(__file__))
 
-wsgi_app = "wsgi:app"
+wsgi_app = "main:app"
 reload = False
 ca_certs = environ.get("SQLALCHEMY_CA_CERTS")
 processes = 2
