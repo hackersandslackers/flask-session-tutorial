@@ -9,7 +9,7 @@ from flask_session_tutorial.forms import LoginForm, SignupForm
 from flask_session_tutorial.models import User, db
 
 # Blueprint Configuration
-auth = Blueprint(
+auth_blueprint = Blueprint(
     "auth",
     __name__,
     template_folder="templates",
@@ -17,7 +17,7 @@ auth = Blueprint(
 )
 
 
-@auth.route("/signup", methods=["GET", "POST"])
+@auth_blueprint.route("/signup", methods=["GET", "POST"])
 def signup() -> Response:
     """
     Sign-up form to create new user accounts.
@@ -46,7 +46,7 @@ def signup() -> Response:
     )
 
 
-@auth.route("/login", methods=["GET", "POST"])
+@auth_blueprint.route("/login", methods=["GET", "POST"])
 def login() -> Response:
     """
     Log-in page for registered users.

@@ -44,7 +44,9 @@ def compile_javascript(app: Flask):
     Environment.auto_build = True
     Environment.debug = False
     # JavaScript Bundle
-    js_bundle = Bundle("src/js/main.js", filters="jsmin", output="dist/js/main.min.js")
+    js_bundle = Bundle(
+        "src/js/main.js",
+        filters="jsmin", output="dist/js/main.min.js")
     # Register assets
     assets.register("js_all", js_bundle)
     # Build assets in development mode

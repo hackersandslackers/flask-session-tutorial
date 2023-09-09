@@ -24,8 +24,8 @@ def create_app():
         from . import auth
         from .assets import compile_static_assets
 
-        app.register_blueprint(routes.main)
-        app.register_blueprint(auth.auth)
+        app.register_blueprint(routes.main_blueprint)
+        app.register_blueprint(auth.auth_blueprint)
 
         # Create static asset bundles
         compile_static_assets(app)

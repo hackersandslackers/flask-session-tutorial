@@ -3,7 +3,7 @@ from flask import Blueprint, Response, redirect, render_template, session, url_f
 from flask_login import current_user, login_required, logout_user
 
 # Blueprint Configuration
-main = Blueprint(
+main_blueprint = Blueprint(
     "main",
     __name__,
     template_folder="templates",
@@ -11,7 +11,7 @@ main = Blueprint(
 )
 
 
-@main.route("/", methods=["GET"])
+@main_blueprint.route("/", methods=["GET"])
 @login_required
 def dashboard() -> Response:
     """
@@ -29,7 +29,7 @@ def dashboard() -> Response:
     )
 
 
-@main.route("/session", methods=["GET"])
+@main_blueprint.route("/session", methods=["GET"])
 @login_required
 def session_view() -> Response:
     """
@@ -45,7 +45,7 @@ def session_view() -> Response:
     )
 
 
-@main.route("/logout")
+@main_blueprint.route("/logout")
 @login_required
 def logout() -> Response:
     """
