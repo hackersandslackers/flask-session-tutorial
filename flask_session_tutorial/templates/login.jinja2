@@ -1,11 +1,12 @@
 {% extends "layout.jinja2" %}
+
 {% block pagestyles %}
 <link href="{{ url_for('static', filename='dist/css/account.css') }}" rel="stylesheet" type="text/css">
 {% endblock %}
 {% block content %}
 <div class="form-wrapper">
   <div class="logo">
-    <img src="{{ url_for('static', filename='dist/img/logo.png') }}" alt="logo" />
+    <img src="{{ url_for('static', filename='dist/img/logo@2x.png') }}" alt="logo" />
   </div>
   {% for message in get_flashed_messages() %}
   <div class="alert alert-warning">

@@ -1,5 +1,7 @@
 """Routes for user authentication."""
-from flask import Blueprint, flash, redirect, render_template, request, url_for
+from typing import Optional
+
+from flask import Blueprint, Response, flash, redirect, render_template, request, url_for
 from flask_login import current_user, login_user
 
 from flask_session_tutorial import login_manager
@@ -11,9 +13,10 @@ auth = Blueprint("auth", __name__, template_folder="templates", static_folder="s
 
 
 @auth.route("/signup", methods=["GET", "POST"])
-def signup():
+def signup() -> Response:
     """
     Sign-up form to create new user accounts.
+
     GET: Serve sign-up page.
     POST: Validate form, create account, redirect user to dashboard.
     """
@@ -39,15 +42,15 @@ def signup():
 
 
 @auth.route("/login", methods=["GET", "POST"])
-def login():
+def login() -> Response:
     """
     Log-in page for registered users.
+
     GET: Serve Log-in page.
     POST: Validate form and redirect user to dashboard.
     """
     if current_user.is_authenticated:
         return redirect(url_for("main.dashboard"))  # Bypass if user is logged in
-
     form = LoginForm()
     if form.validate_on_submit():
         user = User.query.filter_by(email=form.email.data).first()  # Validate Login Attempt
@@ -67,15 +70,25 @@ def login():
 
 
 @login_manager.user_loader
-def load_user(user_id):
-    """Check if user is logged-in upon page load."""
+def load_user(user_id: int) -> Optional[User]:
+    """
+    Check if user is logged-in upon page load.
+
+    :param int user_id: Primary user ID to load from database, if exists.
+
+    :returns: Optional[User]
+    """
     if user_id is not None:
         return User.query.get(user_id)
     return None
 
 
 @login_manager.unauthorized_handler
-def unauthorized():
-    """Redirect unauthorized users to Login page."""
+def unauthorized() -> Response:
+    """
+    Redirect unauthorized users to Login page.
+
+    :returns: Response
+    """
     flash("You must be logged in to view that page.")
     return redirect(url_for("auth.login"))

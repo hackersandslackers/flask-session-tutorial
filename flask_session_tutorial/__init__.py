@@ -23,14 +23,14 @@ def create_app():
 
     with app.app_context():
         from . import auth
-        from .assets import compile_auth_assets, compile_static_assets
+        from .assets import compile_static_assets, compile_stylesheet_assets
 
         app.register_blueprint(main.main)
         app.register_blueprint(auth.auth)
 
         # Create static asset bundles
         compile_static_assets(app)
-        compile_auth_assets(app)
+        compile_stylesheet_assets(app)
 
         # Create Database Models
         db.create_all()

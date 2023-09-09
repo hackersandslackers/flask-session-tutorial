@@ -18,15 +18,16 @@
 
 Get set up locally in two steps:
 
-### Environment Variables
+### Configure
 
 Replace the values in **.env.example** with your values and rename this file to **.env**:
 
+* `ENVIRONMENT`: Enable (`development` or `production`).
 * `FLASK_APP`: Entry point of your application; should be `main.py`.
 * `FLASK_DEBUG`: Toggle debug mode on (`True`) or off (`False`).
 * `SECRET_KEY`: Randomly generated string of characters used to encrypt your app's data.
-* `SQLALCHEMY_DATABASE_URI`: Connection URI of a SQL database.
-* `SESSION_REDIS`: Connection URI of a Redis instance.
+* `SQLALCHEMY_DATABASE_URI`: Connection URI of a SQL database (ie: `mysql+pymysql://myuser:mypassword@host.example.com:1234/mydatabase`)
+* `REDIS_URI`: Connection URI of a Redis instance (ie: `redis://:password@host.com:1234`)
 * `LESS_BIN` *(optional for static assets)*: Path to your local LESS installation via `which lessc`.
 * `ASSETS_DEBUG` *(optional)*: Debug asset creation and bundling in `development`.
 * `LESS_RUN_IN_DEBUG` *(optional)*: Debug LESS while in `development`.
