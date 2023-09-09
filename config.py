@@ -28,8 +28,6 @@ class Config:
     LESS_BIN = system("which lessc")
     ASSETS_DEBUG = False
     LESS_RUN_IN_DEBUG = False
-
-    # Static Assets
     STATIC_FOLDER = "static"
     TEMPLATES_FOLDER = "templates"
     COMPRESSOR_DEBUG = environ.get("COMPRESSOR_DEBUG")

@@ -4,8 +4,6 @@ from flask_login import LoginManager
 from flask_session import Session
 from flask_sqlalchemy import SQLAlchemy
 
-from . import main
-
 db = SQLAlchemy()
 login_manager = LoginManager()
 session = Session()
@@ -22,10 +20,11 @@ def create_app():
     session.init_app(app)
 
     with app.app_context():
+        from . import routes
         from . import auth
         from .assets import compile_static_assets, compile_stylesheet_assets
 
-        app.register_blueprint(main.main)
+        app.register_blueprint(routes.main)
         app.register_blueprint(auth.auth)
 
         # Create static asset bundles
