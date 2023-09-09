@@ -3,7 +3,7 @@ from flask import Flask
 from flask_assets import Bundle, Environment
 
 
-def compile_stylesheet_assets(app: Flask):
+def compile_stylesheets(app: Flask):
     """
     Generate stylesheets for thr application.
 
@@ -34,7 +34,7 @@ def compile_stylesheet_assets(app: Flask):
         stylesheet_bundle_dashboard.build(force=True)
 
 
-def compile_javascript_assets(app: Flask):
+def compile_javascript(app: Flask):
     """
     Generate static assets for main views.
 
@@ -58,5 +58,5 @@ def compile_static_assets(app: Flask):
 
     :param Flask app: Parent Flask application to generate asset bundles for.
     """
-    compile_stylesheet_assets(app)
-    compile_javascript_assets(app)
+    compile_stylesheets(app)
+    compile_javascript(app)
