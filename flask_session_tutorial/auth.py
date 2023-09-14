@@ -20,21 +20,22 @@ auth_blueprint = Blueprint(
 @auth_blueprint.route("/signup", methods=["GET", "POST"])
 def signup() -> Response:
     """
-    Sign-up form to create new user accounts.
+    View for new users to sign up with new accounts.
 
     GET: Serve sign-up page.
     POST: Validate form, create account, redirect user to dashboard.
+
+    :response: Response
     """
     form = SignupForm()
     if form.validate_on_submit():
-        existing_user = User.query.filter_by(email=form.email.data).first()
+        existing_user = User.query.filter_by(email=form.user_email.data).first()
         if existing_user is None:
-            user = User(name=form.name.data, email=form.email.data, website=form.website.data)
-            user.set_password(form.password.data)
+            user = User(name=form.name.data, email=form.user_email.data, website=form.website.data)
+            user.set_password(form.user_password.data)
             db.session.add(user)
             db.session.commit()  # Create new user
             login_user(user)  # Log in as newly created user
-            print(user)
             return redirect(url_for("main.dashboard"))
         flash("A user already exists with that email address.")
     return render_template(
@@ -46,20 +47,22 @@ def signup() -> Response:
     )
 
 
-@auth_blueprint.route("/login", methods=["GET", "POST"])
+@auth_blueprint.route("/", methods=["GET", "POST"])
 def login() -> Response:
     """
     Log-in page for registered users.
 
     GET: Serve Log-in page.
     POST: Validate form and redirect user to dashboard.
+
+    :returns: Response
     """
     if current_user.is_authenticated:
         return redirect(url_for("main.dashboard"))  # Bypass if user is logged in
     form = LoginForm()
     if form.validate_on_submit():
-        user = User.query.filter_by(email=form.email.data).first()  # Validate Login Attempt
-        if user and user.check_password(password=form.password.data):
+        user = User.query.filter_by(email=form.user_email.data).first()  # Validate Login Attempt
+        if user and user.check_password(password=form.user_password.data):
             login_user(user)
             next_page = request.args.get("next")
             return redirect(next_page or url_for("main.dashboard"))
@@ -68,7 +71,7 @@ def login() -> Response:
     return render_template(
         "login.jinja2",
         form=form,
-        title="Log in.",
+        title="Log In",
         template="login-page",
         body="Log in with your User account.",
     )

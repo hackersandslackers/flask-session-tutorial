@@ -11,7 +11,7 @@ main_blueprint = Blueprint(
 )
 
 
-@main_blueprint.route("/", methods=["GET"])
+@main_blueprint.route("/dashboard", methods=["GET"])
 @login_required
 def dashboard() -> Response:
     """

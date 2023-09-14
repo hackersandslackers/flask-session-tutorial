@@ -6,17 +6,18 @@ from flask_session_tutorial import db
 
 
 class User(UserMixin, db.Model):
-    """Model for user accounts."""
+    """User account database model."""
 
     __tablename__ = "flasksession-users"
 
     id = db.Column(db.Integer, primary_key=True)
-    name = db.Column(db.String(200), nullable=False, unique=False)
-    email = db.Column(db.String(40), unique=True, nullable=False)
-    password = db.Column(db.String(200), primary_key=False, unique=False, nullable=False)
-    website = db.Column(db.String(60), index=False, unique=False, nullable=True)
-    created_on = db.Column(db.DateTime, index=False, unique=False, nullable=True)
-    last_login = db.Column(db.DateTime, index=False, unique=False, nullable=True)
+    name = db.Column(db.String(255), nullable=False, unique=False)
+    email = db.Column(db.String(255), unique=True, nullable=False)
+    password = db.Column(db.String(255), nullable=False)
+    website = db.Column(db.String(255), nullable=True)
+    last_login = db.Column(db.DateTime)
+    created_at = db.Column(db.DateTime, server_default=db.func.now())
+    updated_at = db.Column(db.DateTime, server_default=db.func.now(), server_onupdate=db.func.now())
 
     def set_password(self, password):
         """Create hashed password."""

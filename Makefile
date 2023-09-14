@@ -5,9 +5,9 @@ LOCAL_PYTHON := $(VIRTUAL_ENV)/bin/python3
 define HELP
 Manage $(PROJECT_NAME). Usage:
 
-make run        - Run $(PROJECT_NAME) locally.
+make run        - Run $(PROJECT_NAME) locally (not suitable to serve `production` applications).
 make install    - Create local virtualenv & install dependencies.
-make deploy     - Set up project & run locally.
+make deploy     - Set up project & run locally (not suitable to serve `production` applications).
 make update     - Update dependencies via Poetry and output resulting `requirements.txt`.
 make format     - Run Python code formatter & sort dependencies.
 make lint       - Check code formatting with flake8.
@@ -33,7 +33,7 @@ $(VIRTUAL_ENV):
 .PHONY: run
 run: env
 	export LESS_BIN=$(shell which lessc) && \
-	$(LOCAL_PYTHON) -m main
+	$(LOCAL_PYTHON) -m gunicorn -w 4 wsgi:app
 
 .PHONY: install
 install: env

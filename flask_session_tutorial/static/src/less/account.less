@@ -23,19 +23,19 @@
       margin: 0 auto 20px;
 
       img {
-        width: 30px;
+        width: 40px;
         margin: auto;
 
         @media (max-width: 600px) {
-          width: 25px;
+          width: 30px;
         }
       }
     }
 
     .alert-warning {
-      color: #856404;
-      background-color: #fff3cd;
-      border-color: #ffeeba;
+      color: @alert-font-color;
+      background-color: @alert-background-color;
+      border-color: @alert-border-color;
       font-weight: 300;
       font-size: .8em;
       margin: 30px 0;
@@ -47,7 +47,7 @@
       }
 
       .close {
-        color: #856404;
+        color: @alert-font-color;
         font-weight: 300;
         order: 1;
         outline: none !important;
@@ -64,7 +64,8 @@
       font-family: @body-font;
 
       button.close {
-        padding: 0;
+        color: @alert-font-color !important;
+        padding: 0 0 0 10px;
         background-color: transparent;
         border: 0;
         -webkit-appearance: none;

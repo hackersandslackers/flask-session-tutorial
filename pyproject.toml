@@ -28,11 +28,11 @@ isort = "*"
 lesscpy = "*"
 cssmin = "*"
 jsmin = "*"
-uwsgi = "*"
 flake8 = "*"
+gunicorn = "*"
 
 [tool.poetry.scripts]
-run = "main:app"
+run = "wsgi:app"
 
 [tool.poetry.urls]
 issues = "https://github.com/hackersandslackers/flask-session-tutorial/issues"

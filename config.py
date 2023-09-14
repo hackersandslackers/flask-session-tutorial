@@ -4,8 +4,8 @@ from os import environ, path, system
 import redis
 from dotenv import load_dotenv
 
-basedir = path.abspath(path.dirname(__file__))
-load_dotenv(path.join(basedir, ".env"))
+BASE_DIR = path.abspath(path.dirname(__file__))
+load_dotenv(path.join(BASE_DIR, ".env"))
 
 
 class Config:
@@ -24,15 +24,15 @@ class Config:
     SESSION_TYPE = "redis"
     SESSION_REDIS = redis.from_url(REDIS_URI)
 
-    # Flask-Assets
+    # Flask-SQLAlchemy
+    SQLALCHEMY_DATABASE_URI = environ.get("SQLALCHEMY_DATABASE_URI")
+    SQLALCHEMY_TRACK_MODIFICATIONS = False
+    SQLALCHEMY_ECHO = False
+
+    # Flask-Assets (Optional)
     LESS_BIN = system("which lessc")
     ASSETS_DEBUG = False
     LESS_RUN_IN_DEBUG = False
     STATIC_FOLDER = "static"
     TEMPLATES_FOLDER = "templates"
     COMPRESSOR_DEBUG = environ.get("COMPRESSOR_DEBUG")
-
-    # Flask-SQLAlchemy
-    SQLALCHEMY_DATABASE_URI = environ.get("SQLALCHEMY_DATABASE_URI")
-    SQLALCHEMY_TRACK_MODIFICATIONS = environ.get("SQLALCHEMY_TRACK_MODIFICATIONS")
-    SQLALCHEMY_ECHO = environ.get("SQLALCHEMY_ECHO")

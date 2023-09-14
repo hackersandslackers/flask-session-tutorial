@@ -3,11 +3,21 @@ from flask import Flask
 from flask_assets import Bundle, Environment
 
 
+def compile_static_assets(app: Flask):
+    """
+    Compile all asset bundles.
+
+    :param Flask app: Top-level Flask application.
+    """
+    compile_stylesheets(app)
+    compile_javascript(app)
+
+
 def compile_stylesheets(app: Flask):
     """
-    Generate stylesheets for thr application.
+    Generate CSS from .LESS source.
 
-    :param Flask app: Parent application to generate styles for.
+    :param Flask app: Top-level Flask application.
     """
     assets = Environment(app)
     Environment.auto_build = True
@@ -36,9 +46,9 @@ def compile_stylesheets(app: Flask):
 
 def compile_javascript(app: Flask):
     """
-    Generate static assets for main views.
+    Bundle and minimize Javascript source files.
 
-    :param Flask app: Parent Flask application to generate Javascript bundles for.
+    :param Flask app: Top-level Flask application.
     """
     assets = Environment(app)
     Environment.auto_build = True
@@ -52,13 +62,3 @@ def compile_javascript(app: Flask):
     # Build assets in development mode
     if app.config.get("ENVIRONMENT") != "production":
         js_bundle.build(force=True)
-
-
-def compile_static_assets(app: Flask):
-    """
-    Compile all asset bundles.
-
-    :param Flask app: Parent Flask application to generate asset bundles for.
-    """
-    compile_stylesheets(app)
-    compile_javascript(app)
