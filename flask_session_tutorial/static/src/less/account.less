@@ -103,9 +103,9 @@
       margin-bottom: 15px;
       width: -webkit-fill-available;
       border-radius: 2px;
-      border: 1px solid #d4d9e3;
+      border: 1px solid @input-border-color;
       font-weight: 200;
-      color: #4d5060;
+      color: @input-text-color;
       font-family: @body-font;
       transition: @transition;
       font-size: .9em;
@@ -116,12 +116,12 @@
       }
 
       &::placeholder {
-        color: #d4d9e3;
+        color: @input-placeholder-text;
       }
 
       &:hover {
         border-color: @theme-color;
-        background: #d9f6ff;
+        background: @input-background-highlight-color;
 
         &::placeholder {
           color: @theme-color;
@@ -134,7 +134,7 @@
         box-shadow: unset;
 
         &::placeholder {
-          color: #d4d9e3;
+          color: @input-border-color;
         }
       }
     }
@@ -176,7 +176,7 @@
       list-style: none;
       padding: 0;
       font-size: .9em;
-      color: #b75353;
+      color: @alert-error-font-color;
     }
   }
 
