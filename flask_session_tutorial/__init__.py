@@ -20,8 +20,7 @@ def create_app():
     session.init_app(app)
 
     with app.app_context():
-        from . import routes
-        from . import auth
+        from . import auth, routes
         from .assets import compile_static_assets
 
         app.register_blueprint(routes.main_blueprint)

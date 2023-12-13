@@ -23,6 +23,7 @@ pymysql = "*"
 redis = "*"
 email_validator = "*"
 python-dotenv = "*"
+werkzeug = "*"
 black = "*"
 isort = "*"
 lesscpy = "*"
@@ -38,8 +39,8 @@ run = "wsgi:app"
 issues = "https://github.com/hackersandslackers/flask-session-tutorial/issues"
 
 [build-system]
-requires = ["poetry>=1.5.1"]
-build-backend = "poetry.masonry.api"
+requires = ["poetry-core>=1.0.0"]
+build-backend = "poetry.core.masonry.api"
 
 [tool.pylint.'MESSAGES CONTROL']
 disable = "C0103,C0301,W0703,W0621"
