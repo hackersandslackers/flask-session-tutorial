@@ -14,7 +14,7 @@
 ![Flask Session Redis Tutorial](https://github.com/hackersandslackers/flask-session-tutorial/blob/master/.github/flask-session2@2x.jpg?raw=true)
 
 * **Tutorial**: [https://hackersandslackers.com/flask-user-sessions-and-redis/](https://hackersandslackers.com/flask-user-sessions-and-redis/)
-* **Demo**: [https://flasksession.hackersandslackers.com/login](https://flasksession.hackersandslackers.com/login)
+* **Demo**: [https://flasksession.hackersandslackers.com/login](https://flasksession.hackersandslackers.com)
 
 ## Getting Started
 
