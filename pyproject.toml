@@ -6,9 +6,9 @@ authors = ["Todd Birchard <todd@hackersandslackers.com>"]
 maintainers = ["Todd Birchard <todd@hackersandslackers.com>"]
 license = "MIT"
 readme = "README.md"
-homepage = "https://hackersandslackers.com/managing-user-session-variables-with-flask-sessions-and-redis/"
+homepage = "https://hackersandslackers.com/flask-user-sessions-and-redis/"
 repository = "https://github.com/hackersandslackers/flask-session-tutorial/"
-documentation = "https://hackersandslackers.com/managing-user-session-variables-with-flask-sessions-and-redis/"
+documentation = "https://hackersandslackers.com/flask-user-sessions-and-redis/"
 keywords = ["Flask", "Flask-Session", "Redis", "User sessions", "Tutorial"]
 
 [tool.poetry.dependencies]

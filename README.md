@@ -25,7 +25,7 @@ Get set up locally in two steps:
 Replace the values in **.env.example** with your values and rename this file to **.env**:
 
 * `ENVIRONMENT`: Enable (`development` or `production`).
-* `FLASK_APP`: Entry point of your application; should be `main.py`.
+* `FLASK_APP`: Entry point of your application; should be `wsgi.py`.
 * `FLASK_DEBUG`: Toggle debug mode on (`True`) or off (`False`).
 * `SECRET_KEY`: Randomly generated string of characters used to encrypt your app's data.
 * `SQLALCHEMY_DATABASE_URI`: Connection URI of a SQL database (ie: `mysql+pymysql://myuser:mypassword@host.example.com:1234/mydatabase`)
