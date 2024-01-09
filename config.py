@@ -1,9 +1,11 @@
 """App configuration."""
-from os import environ, path, system
+from os import environ, path
+import subprocess
 
 import redis
 from dotenv import load_dotenv
 
+# Read environment variables from ".env" file.
 BASE_DIR = path.abspath(path.dirname(__file__))
 load_dotenv(path.join(BASE_DIR, ".env"))
 
@@ -30,7 +32,7 @@ class Config:
     SQLALCHEMY_ECHO = False
 
     # Flask-Assets (Optional)
-    LESS_BIN = system("which lessc")
+    LESS_BIN = subprocess.run("which lessc", shell=True, check=True)
     ASSETS_DEBUG = False
     LESS_RUN_IN_DEBUG = False
     STATIC_FOLDER = "static"
