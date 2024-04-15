@@ -1,50 +1,41 @@
 """Compile static asset bundles."""
-from flask import Flask
+
+from flask import current_app as app
 from flask_assets import Bundle, Environment
 
 
-def compile_static_assets(app: Flask):
-    """
-    Compile all asset bundles.
-
-    :param Flask app: Top-level Flask application.
-    """
-    compile_stylesheets(app)
-    compile_javascript(app)
-
-
-def compile_stylesheets(app: Flask):
+def compile_stylesheets(assets: Environment) -> Environment:
     """
     Generate CSS from .LESS source.
 
     :param Flask app: Top-level Flask application.
     """
-    assets = Environment(app)
     Environment.auto_build = True
     Environment.debug = False
     # Stylesheets Bundle
-    stylesheet_bundle_account = Bundle(
+    account_stylesheet_bundle = Bundle(
         "src/less/account.less",
         filters="less,cssmin",
         output="dist/css/account.css",
         extra={"rel": "stylesheet/less"},
     )
-    stylesheet_bundle_dashboard = Bundle(
+    dashboard_stylesheet_bundle = Bundle(
         "src/less/dashboard.less",
         filters="less,cssmin",
         output="dist/css/dashboard.css",
         extra={"rel": "stylesheet/less"},
     )
     # Register assets
-    assets.register("styles_account", stylesheet_bundle_account)
-    assets.register("styles_dashboard", stylesheet_bundle_dashboard)
+    assets.register("styles_account", account_stylesheet_bundle)
+    assets.register("styles_dashboard", dashboard_stylesheet_bundle)
     # Build assets in development mode
     if app.config.get("ENVIRONMENT") != "production":
-        stylesheet_bundle_account.build(force=True)
-        stylesheet_bundle_dashboard.build(force=True)
+        account_stylesheet_bundle.build(force=True)
+        dashboard_stylesheet_bundle.build(force=True)
+    return assets
 
 
-def compile_javascript(app: Flask):
+def compile_javascript(assets: Environment) -> Environment:
     """
     Bundle and minimize Javascript source files.
 
@@ -60,3 +51,4 @@ def compile_javascript(app: Flask):
     # Build assets in development mode
     if app.config.get("ENVIRONMENT") != "production":
         js_bundle.build(force=True)
+    return assets

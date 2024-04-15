@@ -1,6 +1,7 @@
 """App configuration."""
-from os import environ, path
+
 import subprocess
+from os import environ, path
 
 import redis
 from dotenv import load_dotenv

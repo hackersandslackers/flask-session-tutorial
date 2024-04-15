@@ -1,4 +1,5 @@
 """Routes for logged-in flask_session_tutorial."""
+
 from flask import Blueprint, Response, redirect, render_template, session, url_for
 from flask_login import current_user, login_required, logout_user
 

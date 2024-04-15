@@ -29,6 +29,11 @@ html {
     margin: auto;
     height: fit-content;
 
+    @media(max-width: @mobile-breakpoint) {
+      width: 100%;
+      margin: 0;
+    }
+
     h1 {
       font-family: 'agenda', sans-serif;
       font-weight: 600;
