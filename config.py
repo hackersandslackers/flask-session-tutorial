@@ -1,6 +1,5 @@
 """App configuration."""
 
-import subprocess
 from os import environ, path
 
 import redis
