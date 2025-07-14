@@ -32,7 +32,6 @@ $(VIRTUAL_ENV):
 
 .PHONY: run
 run: env
-	export LESS_BIN=$(shell which lessc) && \
 	$(LOCAL_PYTHON) -m gunicorn --config=gunicorn.conf.py
 
 .PHONY: install
