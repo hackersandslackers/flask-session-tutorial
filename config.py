@@ -18,7 +18,7 @@ class Config:
     ENVIRONMENT = environ.get("ENVIRONMENT")
 
     # Flask Config
-    FLASK_APP = "main.py"
+    FLASK_APP = "wsgi.py"
     FLASK_DEBUG = environ.get("FLASK_DEBUG")
     SECRET_KEY = environ.get("SECRET_KEY")
 
@@ -33,7 +33,7 @@ class Config:
     SQLALCHEMY_ECHO = False
 
     # Flask-Assets (Optional)
-    LESS_BIN = subprocess.run("which lessc", shell=True, check=True)
+    LESS_BIN = environ.get("LESS_BIN")
     ASSETS_DEBUG = False
     LESS_RUN_IN_DEBUG = False
     STATIC_FOLDER = "static"

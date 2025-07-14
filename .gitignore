@@ -90,6 +90,8 @@ env.bak/
 venv.bak/
 .creds/
 .creds
+ca-cerificate.crt
+**/ca-cerificate.crt
 
 # Spyder project settings
 .spyderproject

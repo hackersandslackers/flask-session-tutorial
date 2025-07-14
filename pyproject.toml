@@ -1,6 +1,6 @@
 [tool.poetry]
 name = "flask-session-tutorial"
-version = "0.1.1"
+version = "0.1.2"
 description = "Example Flask project for implementing Flask-Session with Redis."
 authors = ["Todd Birchard <todd@hackersandslackers.com>"]
 maintainers = ["Todd Birchard <todd@hackersandslackers.com>"]
@@ -39,7 +39,7 @@ run = "wsgi:app"
 issues = "https://github.com/hackersandslackers/flask-session-tutorial/issues"
 
 [build-system]
-requires = ["poetry-core>=1.5.0"]
+requires = ["poetry-core>=2.0.1"]
 build-backend = "poetry.core.masonry.api"
 
 [tool.pylint.'MESSAGES CONTROL']
