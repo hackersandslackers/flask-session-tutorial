@@ -13,8 +13,8 @@ ENVIRONMENT = environ.get("ENVIRONMENT")
 
 proc_name = "flasksession"
 wsgi_app = "wsgi:app"
-bind = ["unix:flask.sock"]
-threads = 2
+bind = "unix:flask.sock"
+threads = 1
 workers = 1
 
 if ENVIRONMENT == "development" or ENVIRONMENT is None:
