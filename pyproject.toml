@@ -12,7 +12,7 @@ documentation = "https://hackersandslackers.com/flask-user-sessions-and-redis/"
 keywords = ["Flask", "Flask-Session", "Redis", "User sessions", "Tutorial"]
 
 [tool.poetry.dependencies]
-python = ">=3.10,<4.0"
+python = ">=3.12,<4.0"
 flask = "*"
 flask-sqlalchemy = "*"
 flask-login = "*"
