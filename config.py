@@ -14,6 +14,7 @@ class Config:
     """Set Flask configuration variables from .env file."""
 
     # General Config
+    APPLICATION_NAME = "flasksession"
     ENVIRONMENT = environ.get("ENVIRONMENT")
 
     # Flask Config
@@ -37,4 +38,4 @@ class Config:
     LESS_RUN_IN_DEBUG = False
     STATIC_FOLDER = "static"
     TEMPLATES_FOLDER = "templates"
-    COMPRESSOR_DEBUG = environ.get("COMPRESSOR_DEBUG")
+    COMPRESSOR_DEBUG = True
