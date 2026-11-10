@@ -684,19 +684,19 @@ files = [
 
 [[package]]
 name = "pymysql"
-version = "1.1.1"
+version = "1.2.4"
 description = "Pure Python MySQL Driver"
 optional = false
-python-versions = ">=3.7"
+python-versions = ">=3.9"
 groups = ["main"]
 files = [
-    {file = "PyMySQL-1.1.1-py3-none-any.whl", hash = "sha256:4de15da4c61dc132f4fb9ab763063e693d521a80fd0e87943b9a453dd4c19d6c"},
-    {file = "pymysql-1.1.1.tar.gz", hash = "sha256:e127611aaf2b417403c60bf4dc570124aeb4a57f5f37b8e95ae399a42f904cd0"},
+    {file = "pymysql-1.2.4-py3-none-any.whl", hash = "sha256:e169bed906168fffd0088925f45b3df024c2775c6fd128da0df773d47c458840"},
+    {file = "pymysql-1.2.4.tar.gz", hash = "sha256:491558165b8e11f3644c5f9cfb30cc9c9111ffd54e53d3aa91b9a0a20be2294f"},
 ]
 
 [package.extras]
-ed25519 = ["PyNaCl (>=1.4.0)"]
-rsa = ["cryptography"]
+ed25519 = ["PyNaCl (>=1.6.2)"]
+rsa = ["cryptography (>=46.0.7)"]
 
 [[package]]
 name = "python-dotenv"
